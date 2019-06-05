@@ -1,0 +1,20 @@
+.ui.menu.top-menu {
+    border: none;
+    .user-logo {
+      width: 17rem;
+      .user {
+          font-family: 'Calibri';
+          font-size: 16pt;
+          color: white;
+      }
+    }
+    .nav-container {
+      flex-grow: 1;
+      padding: 0;
+      .title {
+          font-family: 'Calibri';
+          font-size: 25pt;
+          color: white;
+      }
+    }
+  }
