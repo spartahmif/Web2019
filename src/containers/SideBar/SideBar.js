@@ -2,7 +2,7 @@ import React from 'react';
 import {SideBarItem} from './SideBarItem/SideBarItem';
 import {Menu,Image} from 'semantic-ui-react';
 import './SideBar.scss';
-import logo from '../../assets/images/spartalogo.png';
+import logo from '../../assets/images/Logo.png';
 
 export class SideBar extends React.Component {
 
