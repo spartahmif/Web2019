@@ -29,7 +29,7 @@ const authLogout = prevState => {
   };
 };
 
-export const authReducers = (prevState = initialState, action) => {
+export const authReducer = (prevState = initialState, action) => {
   switch (action.type) {
     case actionTypes.AUTH_START:
       return authStart(prevState);
