@@ -4,9 +4,9 @@ import {
   ModalActions,
   ModalContent,
   Form,
-  Icon,
   Button
 } from "semantic-ui-react";
+import "./PassChange.scss";
 
 export class PassChange extends React.Component {
   constructor() {
@@ -49,17 +49,10 @@ export class PassChange extends React.Component {
     return (
       <Modal
         trigger={
-          <Button
-            icon
-            color="blue"
-            labelPosition="left"
-            onClick={this.handleOpen}
-          >
-            <Icon className="header-icon" name="setting" size="large" />
-            Change Password
-          </Button>
+          <div className="trigger" onClick={this.handleOpen}>
+            <span>Change Password</span>
+          </div>
         }
-        closeIcon
         open={this.state.modalOpen}
         onClose={this.handleClose}
       >
@@ -84,6 +77,9 @@ export class PassChange extends React.Component {
           </Form>
         </ModalContent>
         <ModalActions>
+          <Button negative onClick={this.handleClose}>
+            Cancel
+          </Button>
           <Button
             disabled={!this.state.valid}
             color="green"

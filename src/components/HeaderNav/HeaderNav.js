@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Icon, Image, Menu } from "semantic-ui-react";
+import { Image, Menu } from "semantic-ui-react";
 import "./HeaderNav.scss";
 import logo from "../../assets/images/profile.svg";
 import { PassChange } from "./PassChange/PassChange";
@@ -21,10 +21,7 @@ export class HeaderNav extends React.Component {
               <PassChange />
             </Menu.Item>
             <Menu.Item>
-              <Button icon color="blue" labelPosition="left">
-                <Icon className="header-icon" name="sign out" size="large" />
-                Log Out
-              </Button>
+              <span className="trigger">Log Out</span>
             </Menu.Item>
           </Menu.Menu>
         </Menu.Menu>
@@ -32,3 +29,5 @@ export class HeaderNav extends React.Component {
     );
   }
 }
+
+export default HeaderNav;
