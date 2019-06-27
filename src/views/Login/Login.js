@@ -40,27 +40,27 @@ class LoginComponent extends Component {
       <div className="ui container loginContainer">
         <div className="ui raised very padded segment">
           {redirect}
-          <h2 className="ui header">Login</h2>
+          <h2 className="ui header">Sign In</h2>
           <form className="ui form">
             <Input
               className="username"
-              label="Username"
               placeholder="Username"
+              icon="user"
               onChange={this.onInputChange}
             />
+            <br />
             <Input
               className="password"
-              label="Password"
               placeholder="Password"
+              icon="lock"
               onChange={this.onInputChange}
             />
             {messageComponent}
+            <br />
             <Button className="login" onClick={this.onButtonClick}>
               Login
             </Button>
-            <Button className="forgetpassword" onClick={this.onButtonClick}>
-              Forget Password
-            </Button>
+            <br />
           </form>
         </div>
       </div>

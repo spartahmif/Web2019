@@ -1,4 +1,4 @@
-.loginContainer {
+.ui.container.loginContainer {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -6,4 +6,14 @@
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   width: 600px !important;
+  div.segment {
+    .header {
+      text-align: center;
+      color: gray;
+    }
+    .login {
+      background-color: rgb(245, 131, 24);
+      color: white;
+    }
+  }
 }

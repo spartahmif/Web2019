@@ -12,8 +12,7 @@ export class Input extends Component {
 
   render() {
     return (
-      <div className="field">
-        <label>{this.props.label}</label>
+      <div className="ui fluid left icon input">
         <input
           type={this.props.className === "password" ? "password" : "text"}
           placeholder={this.props.placeholder}
@@ -21,6 +20,7 @@ export class Input extends Component {
           onChange={this.onChange}
           className={this.props.className}
         />
+        <i aria-hidden="true" class={[this.props.icon, "icon"].join(" ")}></i>
       </div>
     );
   }
