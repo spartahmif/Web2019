@@ -1,3 +1,6 @@
+body {
+  background: rgb(247, 196, 58) !important;
+}
 .ui.container.loginContainer {
   position: absolute;
   top: 50%;
@@ -6,7 +9,7 @@
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   width: 600px !important;
-  div.segment {
+  .segment {
     .header {
       text-align: center;
       color: gray;
