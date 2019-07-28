@@ -12,7 +12,7 @@ export class SheetData extends Component {
 
   componentDidMount() {
     Tabletop.init({
-      key: "1zfexuNowg2Z_6WUOaJHe2PeFE9Jra7eb6tRokmk7mIQ",
+      key: "1KTGCJWfulxXXrEd3uLveWM_LBASbKjQMG-dr3IcZAzA",
       callback: googleData => {
         this.setState({
           data: googleData
@@ -24,11 +24,11 @@ export class SheetData extends Component {
 
   render() {
     const { data } = this.state;
-    const id = "2";
+    const id = "16518030";
     return (
       <div id="score-details">
         {data.map(obj => {
-          if (obj.id === id) {
+          if (obj.NIM === id) {
             var keys = Object.keys(obj);
             var retVal = "";
             for (var key of keys) {
