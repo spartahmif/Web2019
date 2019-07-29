@@ -32,7 +32,13 @@ export class SheetData extends Component {
             var keys = Object.keys(obj);
             var retVal = "";
             for (var key of keys) {
-              if (key !== "id2") {
+              if (
+                key !== "Nama Lengkap" &&
+                key !== "Nama Panggilan" &&
+                key !== "NIM" &&
+                key !== "Kelompok" &&
+                obj[key] !== null
+              ) {
                 retVal += key + ": " + obj[key] + "\n";
               }
             }
