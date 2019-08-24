@@ -4,7 +4,8 @@ const initialState = {
   usedId: null,
   userToken: null,
   authError: null,
-  authLoading: false
+  authLoading: false,
+  authMessage: null
 };
 
 const authStart = prevState => {
