@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Route } from "react-router-dom";
+import { withRouter, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { HeaderNav } from "../components/HeaderNav/HeaderNav";
@@ -10,9 +10,14 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Route path="/login" component={Login} />
-        {/* <HeaderNav /> */}
-        {/* <SideBar /> */}
+        <HeaderNav />
+        <SideBar />
+        <div className="app-container">
+          <Switch>
+            <Route path="/login" component={Login} />
+            {/* <Route path="/profile" component={Profile} /> */}
+          </Switch>
+        </div>
       </React.Fragment>
     );
   }
