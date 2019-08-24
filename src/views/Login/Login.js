@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-
-// import { auth } from "../../store/actions";
+import { userActions } from "store/actions";
 import "./Login.scss";
 import { Button, Message, Input } from "../../components";
 
@@ -12,11 +11,8 @@ class LoginComponent extends Component {
   onButtonClick = e => {
     e.preventDefault();
     const { username, password } = this.state;
-    if (e.target.className.includes("login")) {
-      this.props.auth(username, password, true);
-    } else {
-      this.props.auth(username, password, false);
-    }
+    console.log("aaa");
+    this.props.login(username, password);
   };
 
   onInputChange = event => {
@@ -68,21 +64,20 @@ class LoginComponent extends Component {
   }
 }
 
-export const Login = LoginComponent;
+// export const Login = LoginComponent;
 
-// const mapStateToProps = state => {
-//   return {
-//     authMessage: state.auth.authMessage,
-//     isLoggedIn: state.auth.userToken != null
-//   };
-// };
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     auth: (email, password, islogin) => dispatch(auth(email, password, islogin))
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    authMessage: state.auth.authMessage,
+    isLoggedIn: state.auth.userToken != null
+  };
+};
 
-// export const Login = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(LoginComponent);
+const actionCreators = {
+  login: userActions.login
+};
+
+export const Login = connect(
+  mapStateToProps,
+  actionCreators
+)(LoginComponent);
