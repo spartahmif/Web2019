@@ -2,17 +2,21 @@ import React, { Component } from "react";
 import { withRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
+import { Profile } from "views/Profile";
 import { HeaderNav } from "../components/HeaderNav/HeaderNav";
 import { SideBar } from "../components/SideBar/SideBar";
 import { Login } from "./Login/Login";
-
+import "./App.scss";
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Route path="/login" component={Login} />
-        {/* <HeaderNav /> */}
-        {/* <SideBar /> */}
+        <HeaderNav />
+        <SideBar />
+        <div className="app-container">
+          <Route path="/login" component={Login} />
+          <Profile />
+        </div>
       </React.Fragment>
     );
   }

@@ -14,7 +14,7 @@ export class PassChange extends React.Component {
     this.state = {
       password: "",
       newPassword: "",
-      reEnter: "",
+      confirmedPassword: "",
       valid: false
     };
   }
@@ -24,23 +24,20 @@ export class PassChange extends React.Component {
   handleClose = () => this.setState({ modalOpen: false });
 
   handlePassword = evt => {
-    this.setState({ password: evt.target.value });
-    this.checkValid();
+    this.setState({ password: evt.target.value }, () => {
+      this.checkValid();
+    });
   };
 
-  handleNewPassword = evt => {
-    this.setState({ newPassword: evt.target.value });
-    this.checkValid();
-  };
-
-  handleReEnter = evt => {
-    this.setState({ reEnter: evt.target.value });
-    this.checkValid();
+  handleconfirmedPassword = evt => {
+    this.setState({ confirmedPassword: evt.target.value }, () => {
+      this.checkValid();
+    });
   };
 
   checkValid = () => {
-    const { password, newPassword, reEnter } = this.state;
-    newPassword.length >= 8 && newPassword === reEnter
+    const { password, newPassword, confirmedPassword } = this.state;
+    newPassword.length >= 8 && newPassword === confirmedPassword
       ? this.setState({ valid: true })
       : this.setState({ valid: false });
   };
@@ -70,8 +67,8 @@ export class PassChange extends React.Component {
             </Form.Field>
             <Form.Field>
               <label>Confirm New Password</label>
-              <input type="password" onChange={this.handleReEnter} />
-              <label>{this.state.reEnter}</label>
+              <input type="password" onChange={this.handleconfirmedPassword} />
+              <label>{this.state.confirmedPassword}</label>
               <label>{this.state.valid}</label>
             </Form.Field>
           </Form>
