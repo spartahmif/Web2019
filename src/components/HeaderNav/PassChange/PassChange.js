@@ -29,6 +29,12 @@ export class PassChange extends React.Component {
     });
   };
 
+  handleNewPassword = evt => {
+    this.setState({ newPassword: evt.target.value }, () => {
+      this.checkValid();
+    });
+  };
+
   handleconfirmedPassword = evt => {
     this.setState({ confirmedPassword: evt.target.value }, () => {
       this.checkValid();
@@ -63,13 +69,10 @@ export class PassChange extends React.Component {
               <label>New Password</label>
               <label>Password should be at least 8 characters long</label>
               <input type="password" onChange={this.handleNewPassword} />
-              <label>{this.state.newPassword}</label>
             </Form.Field>
             <Form.Field>
               <label>Confirm New Password</label>
               <input type="password" onChange={this.handleconfirmedPassword} />
-              <label>{this.state.confirmedPassword}</label>
-              <label>{this.state.valid}</label>
             </Form.Field>
           </Form>
         </ModalContent>

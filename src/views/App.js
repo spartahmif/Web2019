@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 import { Profile } from "views/Profile";
 import { HeaderNav } from "../components/HeaderNav/HeaderNav";
-import { SideBar } from "../components/SideBar/SideBar";
 import { Login } from "./Login/Login";
 import "./App.scss";
 class App extends Component {
@@ -12,7 +11,6 @@ class App extends Component {
     return (
       <React.Fragment>
         <HeaderNav />
-        <SideBar />
         <div className="app-container">
           <Route path="/login" component={Login} />
           <Profile />
