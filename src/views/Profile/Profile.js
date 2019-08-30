@@ -29,6 +29,7 @@ export class Profile extends Component {
 
   render() {
     var content;
+    var excludeKeys = ["md5"];
     this.state.data === null
       ? (content = (
           <div>
@@ -42,7 +43,9 @@ export class Profile extends Component {
               <h2>Biodata</h2>
 
               {Object.keys(this.state.data).map(eachKey => {
-                return <p>{`${eachKey} : ${this.state.data[eachKey]}`}</p>;
+                if (!excludeKeys.includes(eachKey)) {
+                  return <p>{`${eachKey} : ${this.state.data[eachKey]}`}</p>;
+                }
               })}
             </div>
           </div>
