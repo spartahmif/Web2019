@@ -30,6 +30,13 @@ export class Profile extends Component {
   render() {
     var content;
     var excludeKeys = ["md5"];
+    var nonScore = [
+      "NIM",
+      "Nama Panggilan",
+      "Nama Lengkap",
+      "List",
+      "Kelompok"
+    ];
     this.state.data === null
       ? (content = (
           <div>
@@ -44,7 +51,15 @@ export class Profile extends Component {
 
               {Object.keys(this.state.data).map(eachKey => {
                 if (!excludeKeys.includes(eachKey)) {
-                  return <p>{`${eachKey} : ${this.state.data[eachKey]}`}</p>;
+                  if (!nonScore.includes(eachKey)) {
+                    return (
+                      <p>{`${eachKey} : ${parseFloat(
+                        this.state.data[eachKey]
+                      ).toFixed(2)}`}</p>
+                    );
+                  } else {
+                    return <p>{`${eachKey} : ${this.state.data[eachKey]}`}</p>;
+                  }
                 }
               })}
             </div>
